@@ -4,7 +4,7 @@
 #
 
 app = 'bluegreen'
-primary_region = 'sin'
+primary_region = 'ord'
 kill_signal = 'SIGTERM'
 
 [build]
