@@ -1,5 +1,9 @@
 # Bluegreen
 
+This is a basic Phoenix app to demonstrate deploying to Fly.io with the bluegreen strategy. 
+
+----
+
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
