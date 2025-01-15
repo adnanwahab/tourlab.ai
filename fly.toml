@@ -10,33 +10,33 @@ kill_signal = 'SIGTERM'
 [build]
 
 [deploy]
-  strategy = 'bluegreen'
+strategy = 'bluegreen'
 
 [env]
-  PHX_HOST = 'flybg.fly.dev'
-  PORT = '8080'
+PHX_HOST = 'flybg.fly.dev'
+PORT = '8080'
 
 [http_service]
-  internal_port = 8080
-  force_https = true
-  auto_stop_machines = 'stop'
-  auto_start_machines = true
-  min_machines_running = 0
-  processes = ['app']
+internal_port = 8080
+force_https = true
+auto_stop_machines = 'stop'
+auto_start_machines = true
+min_machines_running = 1
+processes = ['app']
 
-  [http_service.concurrency]
-    type = 'connections'
-    hard_limit = 1000
-    soft_limit = 1000
+[http_service.concurrency]
+type = 'connections'
+hard_limit = 1000
+soft_limit = 1000
 
-  [[http_service.checks]]
-    interval = '15s'
-    timeout = '1s'
-    grace_period = '2s'
-    method = 'GET'
-    path = '/healthcheck'
+[[http_service.checks]]
+interval = '15s'
+timeout = '1s'
+grace_period = '2s'
+method = 'GET'
+path = '/healthcheck'
 
 [[vm]]
-  memory = '2gb'
-  cpu_kind = 'performance'
-  cpus = 1
+memory = '2gb'
+cpu_kind = 'performance'
+cpus = 1
