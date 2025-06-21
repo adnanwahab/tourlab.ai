@@ -20,6 +20,7 @@ defmodule BluegreenWeb.Router do
     get "/", PageController, :home
 
     get "/healthcheck", HealthCheckController, :index
+    post "/resend_email", PageController, :resend_email
   end
 
   # Other scopes may use custom stacks.

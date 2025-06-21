@@ -3,7 +3,7 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'flybg'
+app = 'tourlab'
 primary_region = 'ord'
 kill_signal = 'SIGTERM'
 
@@ -13,13 +13,13 @@ kill_signal = 'SIGTERM'
 strategy = 'bluegreen'
 
 [env]
-PHX_HOST = 'flybg.fly.dev'
+PHX_HOST = 'tourlab.fly.dev'
 PORT = '8080'
 
 [http_service]
 internal_port = 8080
 force_https = true
-auto_stop_machines = 'stop'
+auto_stop_machines = true
 auto_start_machines = true
 min_machines_running = 1
 processes = ['app']
